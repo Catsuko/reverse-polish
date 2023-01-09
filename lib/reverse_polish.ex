@@ -29,34 +29,26 @@ defmodule ReversePolish do
   """
   def calculate(str) do
     String.split(str)
-      |> Enum.reduce([], fn item, stack -> calculate(item, stack) end)
+      |> Enum.reduce([], &evaluate_token/2)
       |> List.first
   end
 
-  defp calculate("+", [first, second | stack]) do
-    [first + second | stack]
+  defp evaluate_token(token, stack) do
+    if String.match?(token, ~r/\A\d+\z/) do
+      Integer.parse(token)
+        |> elem(0)
+        |> push_operand(stack)
+    else
+      apply_operator(token, stack)
+    end
   end
 
-  defp calculate("-", [first, second | stack]) do
-    [second - first | stack]
-  end
-
-  defp calculate("*", [first, second | stack]) do
-    [first * second | stack]
-  end
-
-  defp calculate("/", [first, second | stack]) do
-    [trunc(second / first) | stack]
-  end
-
-  defp calculate(operand, stack) when is_number(operand) do
+  defp push_operand(operand, stack) when is_number(operand) do
     [operand | stack]
   end
 
-  defp calculate(operand, stack) do
-    case Integer.parse(operand) do
-      {n, _} -> calculate(n, stack)
-      :error -> raise "Invalid token in expression: '#{operand}'"
-    end
+  defp apply_operator(operator, [rhs, lhs | stack]) do
+    [Operators.evaluate(operator, rhs, lhs) | stack]
   end
+
 end

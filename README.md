@@ -29,4 +29,5 @@ mix test
 
 - [X] Implement calculator
 - [X] Handle unknown characters with a helpful message
-- [ ] Refactor operators into imported module
+- [X] Refactor operators into imported module
+- [ ] Add some fun operators
