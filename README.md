@@ -30,4 +30,5 @@ mix test
 - [X] Implement calculator
 - [X] Handle unknown characters with a helpful message
 - [X] Refactor operators into imported module
-- [ ] Add some fun operators
+- [X] Add some fun operators
+- [ ] Add dedicated tests for operators and keep doc tests simple

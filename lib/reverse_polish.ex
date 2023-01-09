@@ -23,6 +23,18 @@ defmodule ReversePolish do
       iex> ReversePolish.calculate("2 5 * 4 + 3 2 * 1 + /")
       2
 
+      iex> ReversePolish.calculate("3 2 %")
+      1
+
+      iex> ReversePolish.calculate("2 3 min")
+      2
+
+      iex> ReversePolish.calculate("2 3 max")
+      3
+
+      iex> ReversePolish.calculate("7 2 ^")
+      49
+
       iex> ReversePolish.calculate("3 3 @")
       ** (RuntimeError) Invalid token in expression: '@'
 
