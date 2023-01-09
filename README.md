@@ -8,6 +8,25 @@ The expression `2 + 3` would be written as:
 3 2 +
 ```
 
+## Usage
+
+```shell
+iex -S mix
+```
+
+```elixir
+ReversePolish.calculate("3 2 +")
+5
+```
+
+### Run Tests
+
+```shell
+mix test
+```
+
+## Goals
+
 - [X] Implement calculator
 - [X] Handle unknown characters with a helpful message
 - [ ] Refactor operators into imported module
