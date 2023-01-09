@@ -1,21 +1,9 @@
 # ReversePolish
 
-**TODO: Add description**
+Reverse Polish Notation calculator implemented in Elixir. [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation#Explanation) is a notation made for simplifying expressions by elimination the need for brackets.
 
-## Installation
+Expressions contain operands followed by operators and are evaluating in order from left to right. The expression `2 + 3` would be written as:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `reverse_polish` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:reverse_polish, "~> 0.1.0"}
-  ]
-end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/reverse_polish](https://hexdocs.pm/reverse_polish).
-
+3 2 +
+```
