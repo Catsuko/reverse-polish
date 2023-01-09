@@ -1,4 +1,4 @@
-defmodule Operators do
+defmodule ReversePolish.Operators do
   @moduledoc """
   Operators accept two numbers and combine them to produce a result.
   """

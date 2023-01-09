@@ -3,6 +3,8 @@ defmodule ReversePolish do
   Reverse Polish Notation is a notation for simplifying expressions by eliminating the need for brackets.
   """
 
+  import ReversePolish.Operators
+
   @doc """
   Calculates the value of an expression given in Reverse Polish Notation.
 
@@ -60,7 +62,7 @@ defmodule ReversePolish do
   end
 
   defp apply_operator(operator, [rhs, lhs | stack]) do
-    [Operators.evaluate(operator, rhs, lhs) | stack]
+    [evaluate(operator, rhs, lhs) | stack]
   end
 
 end
