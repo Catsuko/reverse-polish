@@ -7,3 +7,7 @@ The expression `2 + 3` would be written as:
 ```
 3 2 +
 ```
+
+- [X] Implement calculator
+- [X] Handle unknown characters with a helpful message
+- [ ] Refactor operators into imported module
